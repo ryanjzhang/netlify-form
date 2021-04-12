@@ -39,7 +39,7 @@ export default class Form extends React.Component {
   render() {
     return (
       <>
-        <form name="contact" method="POST">
+        <form name="contact" method="POST" onSubmit={this.handleSubmit}>
           <input type="hidden" name="form-name" value="contact" />
           <p hidden>
             <label>
@@ -54,7 +54,12 @@ export default class Form extends React.Component {
           </p>
           <p>
             <label>
-              File: <input type="file" name="test-file" />
+              File:{" "}
+              <input
+                type="file"
+                name="test-file"
+                onChange={this.handleAttachment}
+              />
             </label>
           </p>
           <p>
@@ -65,4 +70,3 @@ export default class Form extends React.Component {
     );
   }
 }
-
