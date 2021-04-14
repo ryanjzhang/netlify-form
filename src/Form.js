@@ -35,14 +35,8 @@ export default class Form extends React.Component {
         ...this.state,
       }),
     })
-      //   .then(() => navigateTo(form.getAttribute("action")))
-      //   .catch((error) => alert(error));
-      .then((res) => {
-        res.status = console.log(res.status === 200 ? "SUCCESS" : "ERROR");
-      })
-      .catch(() => {
-        console.log("ERROR");
-      });
+      .then(() => navigateTo(form.getAttribute("action")))
+      .catch((error) => console.log(error));
   };
 
   render() {
@@ -52,7 +46,6 @@ export default class Form extends React.Component {
         <form
           name="file-upload"
           method="post"
-          action="/thanks/"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
