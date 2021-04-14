@@ -1,16 +1,16 @@
 import "./App.css";
 import React from "react";
-import { navigateTo } from "gatsby-link";
+// import { navigateTo } from "gatsby-link";
 
-function encode(data) {
-  const formData = new FormData();
+// function encode(data) {
+//   const formData = new FormData();
 
-  for (const key of Object.keys(data)) {
-    formData.append(key, data[key]);
-  }
+//   for (const key of Object.keys(data)) {
+//     formData.append(key, data[key]);
+//   }
 
-  return formData;
-}
+//   return formData;
+// }
 
 export default class Form extends React.Component {
   constructor(props) {
@@ -26,19 +26,18 @@ export default class Form extends React.Component {
     this.setState({ [e.target.name]: e.target.files[0] });
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    fetch("/", {
-      method: "POST",
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...this.state,
-      }),
-    })
-      .then(() => navigateTo(form.getAttribute("action")))
-      .catch((error) => alert(error));
-  };
+//   handleSubmit = (e) => {
+//     const form = e.target;
+//     fetch("/", {
+//       method: "POST",
+//       body: encode({
+//         "form-name": form.getAttribute("name"),
+//         ...this.state,
+//       }),
+//     })
+//       .then(() => navigateTo(form.getAttribute("action")))
+//       .catch((error) => alert(error));
+//   };
 
   render() {
     return (
@@ -47,7 +46,7 @@ export default class Form extends React.Component {
         <form
           name="file-upload"
           method="post"
-          action="/thanks/"
+        //   action="/thanks/"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
