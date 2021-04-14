@@ -31,7 +31,7 @@ export default class Form extends React.Component {
     fetch("/", {
       method: "POST",
       body: encode({
-        "form-name": form.getAttribute("file-upload"),
+        "form-name": form.getAttribute("name"),
         ...this.state,
       }),
     })
