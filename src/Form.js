@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { navigateTo } from "gatsby-link";
+// import { navigateTo } from "gatsby-link";
 
 function encode(data) {
   const formData = new FormData();
@@ -36,8 +36,8 @@ export default class Form extends React.Component {
         ...this.state,
       }),
     })
-      .then(() => navigateTo(form.getAttribute("action")))
-      .catch((error) => console.log(error));
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => alert(error));
   };
 
   render() {
@@ -47,7 +47,7 @@ export default class Form extends React.Component {
         <form
           name="file-upload"
           method="post"
-          action="/thanks/"
+          action="/"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
