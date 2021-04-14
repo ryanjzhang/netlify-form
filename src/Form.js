@@ -34,7 +34,6 @@ export default class Form extends React.Component {
         ...this.state,
       }),
     })
-      //   .then(() => navigate(form.getAttribute("action")))
       .then((window.location = form.getAttribute("action")))
       .catch((error) => console.log(error));
     e.preventDefault();
