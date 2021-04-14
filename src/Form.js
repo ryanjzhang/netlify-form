@@ -27,6 +27,7 @@ export default class Form extends React.Component {
   };
 
   handleSubmit = (e) => {
+    e.preventDefault();
     const form = e.target;
     fetch("/", {
       method: "POST",
@@ -46,6 +47,7 @@ export default class Form extends React.Component {
         <form
           name="file-upload"
           method="post"
+          action="/thanks/"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
